@@ -1,3 +1,7 @@
+// Hypo 0.3: http://github.com/rentzsch/hypo
+//   Copyright (c) 2010-2011 Jonathan 'Wolf' Rentzsch: http://rentzsch.com
+//   Some rights reserved: http://opensource.org/licenses/MIT
+
 #import <Foundation/Foundation.h>
 
 @interface HypoContainer : NSObject {
@@ -16,7 +20,7 @@
 - (id)singletonOfClass:(Class)class_;
 
 - (id)createAndAddInstanceOfClass:(Class)class_;
-- (id)createAndAddInstanceOfClass:(Class)class_ withInstances:(id)firstInstance_, ... NS_REQUIRES_NIL_TERMINATION;
+- (id)createAndAddInstanceOfClass:(Class)class_ withDependancies:(id)firstInstance_, ... NS_REQUIRES_NIL_TERMINATION;
 - (void)createAndAddInstancesOfClasses:(NSArray*)classes_;
 @end
 

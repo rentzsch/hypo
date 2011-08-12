@@ -1,3 +1,7 @@
+// Hypo 0.3: http://github.com/rentzsch/hypo
+//   Copyright (c) 2010-2011 Jonathan 'Wolf' Rentzsch: http://rentzsch.com
+//   Some rights reserved: http://opensource.org/licenses/MIT
+
 #import "Hypo.h"
 #import <objc/runtime.h>
 #import "JRLog.h"
@@ -106,7 +110,7 @@
     return result;
 }
 
-- (id)createAndAddInstanceOfClass:(Class)class_ withInstances:(id)firstInstance_, ... {
+- (id)createAndAddInstanceOfClass:(Class)class_ withDependancies:(id)firstInstance_, ... {
     NSParameterAssert(class_);
     NSParameterAssert(firstInstance_);
     
