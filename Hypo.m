@@ -293,6 +293,22 @@ static NSString *classNameFromPropertyAttributes(const char *attributesCStr) {
     }
     return initedInstance;
 }
+
+- (id)createWithDependancies:(id)firstInstance_,... {
+    NSParameterAssert(firstInstance_);
+    
+    [container addInstance:firstInstance_];
+    
+    va_list args;
+    va_start(args, firstInstance_);
+    id instance;
+    while ((instance = va_arg(args, id))) {
+        [container addInstance:instance];
+    }
+    va_end(args);
+    
+    return [self create];
+}
 @end
 
 //-----------------------------------------------------------------------------------------

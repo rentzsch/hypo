@@ -31,6 +31,7 @@
     HypoContainer *container;
 }
 - (id)create;
+- (id)createWithDependancies:(id)firstInstance_, ... NS_REQUIRES_NIL_TERMINATION;
 @end
 
 //-----------------------------------------------------------------------------------------
