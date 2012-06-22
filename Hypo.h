@@ -45,3 +45,8 @@
 @interface NSObject (jr_new)
 + (id)jr_new; // same as [[[Class alloc] init] autorelease].
 @end
+
+//-----------------------------------------------------------------------------------------
+
+@protocol HypoSingleton
+@end
