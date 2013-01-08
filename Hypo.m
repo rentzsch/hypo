@@ -6,6 +6,10 @@
 #import "Hypo.h"
 #import <objc/runtime.h>
 
+#if __has_feature(objc_arc)
+    #define autorelease self
+#endif
+
 @implementation NSObject (hypo_new)
 
 + (instancetype)hypo_new {
@@ -65,7 +69,7 @@ static NSString *classNameFromPropertyAttributes(const char *attributesCStr) {
                     // Finally if all those failed just create a new instance ourself.
                     if (!propertyValue) {
                         NSString *keypathPrefix = [propertyName stringByAppendingString:@"."];
-                        NSMutableDictionary *subOpts = [NSMutableDictionary new];
+                        NSMutableDictionary *subOpts = [NSMutableDictionary dictionary];
                         for (NSString *key in opts) {
                             if ([key hasPrefix:keypathPrefix]) {
                                 NSString *subkeypath = [key substringFromIndex:[keypathPrefix length]];
@@ -89,21 +93,15 @@ static NSString *classNameFromPropertyAttributes(const char *attributesCStr) {
         currentClass = class_getSuperclass(currentClass);
     } while (currentClass && currentClass != [NSObject class]);
     
-    return instance;
+    return [instance autorelease];
 }
 
 @end
 
 @implementation HypoClass
-
-- (id)hypo_new {
-    return [self hypo_new:@{}];
-}
-
-- (id)hypo_new:(NSDictionary*)opts {
-    return [self.cls hypo_new:opts];
-}
-
+// These are never actually called:
+- (id)hypo_new { return nil; }
+- (id)hypo_new:(NSDictionary*)opts { return nil; }
 @end
 
 NSString const * HypoCallback = @":HypoCallback";

@@ -1,6 +1,10 @@
 #import "HypoTests.h"
 #import "Hypo.h"
 
+#if __has_feature(objc_arc)
+    #define autorelease self
+#endif
+
 @interface ClassWithoutDependancies : NSObject
 @property(strong)  NSObject  *anObject;
 @end
@@ -49,7 +53,7 @@
 - (void)testClassWithCallbackDependancy {
     ClassWithoutDependancies *a = [ClassWithoutDependancies hypo_new];
     ClassWithADependancy *b = [ClassWithADependancy hypo_new:@{
-                               HypoCallback: ^id (id instance,
+                               HypoCallback: [[^id (id instance,
                                                   NSString *propertyName,
                                                   NSString *propertyClassName,
                                                   NSDictionary *opts){
@@ -60,7 +64,7 @@
             result = a;
         }
         return result;
-    }
+    } copy] autorelease]
                                }];
     STAssertNotNil(b.leaf_hypo, nil);
     STAssertEqualObjects(a, b.leaf_hypo, nil);

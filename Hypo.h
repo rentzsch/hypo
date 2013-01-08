@@ -11,8 +11,6 @@
 @end
 
 @interface HypoClass : NSObject
-@property(strong)  Class  cls;
-
 - (id)hypo_new;
 - (id)hypo_new:(NSDictionary*)opts;
 @end
