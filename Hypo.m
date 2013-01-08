@@ -1,6 +1,7 @@
-// Hypo 0.3: http://github.com/rentzsch/hypo
-//   Copyright (c) 2010-2011 Jonathan 'Wolf' Rentzsch: http://rentzsch.com
-//   Some rights reserved: http://opensource.org/licenses/MIT
+// Hypo.m semver:1.0
+//   Copyright (c) 2010-2013 Jonathan 'Wolf' Rentzsch: http://rentzsch.com
+//   Some rights reserved: http://opensource.org/licenses/mit
+//   http://github.com/rentzsch/hypo
 
 #import "Hypo.h"
 #import <objc/runtime.h>
