@@ -15,9 +15,6 @@
 - (id)hypo_new:(NSDictionary*)opts;
 @end
 
-@protocol HypoSingleton
-@end
-
 extern NSString const * HypoCallback;
 
 typedef id (^HypoCallbackBlock)(
