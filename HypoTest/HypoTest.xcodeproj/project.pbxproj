@@ -16,7 +16,7 @@
 		799B8653169BAC5000FAAD6E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799B8652169BAC5000FAAD6E /* SenTestingKit.framework */; };
 		799B8654169BAC5000FAAD6E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799B8634169BAC5000FAAD6E /* Cocoa.framework */; };
 		799B865C169BAC5000FAAD6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 799B865A169BAC5000FAAD6E /* InfoPlist.strings */; };
-		799B865F169BAC5000FAAD6E /* HypoTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 799B865E169BAC5000FAAD6E /* HypoTestTests.m */; };
+		799B865F169BAC5000FAAD6E /* HypoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 799B865E169BAC5000FAAD6E /* HypoTests.m */; };
 		799B866B169BADC700FAAD6E /* Hypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 799B866A169BADC700FAAD6E /* Hypo.m */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +48,8 @@
 		799B8652169BAC5000FAAD6E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		799B8659169BAC5000FAAD6E /* HypoTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HypoTestTests-Info.plist"; sourceTree = "<group>"; };
 		799B865B169BAC5000FAAD6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		799B865D169BAC5000FAAD6E /* HypoTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HypoTestTests.h; sourceTree = "<group>"; };
-		799B865E169BAC5000FAAD6E /* HypoTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypoTestTests.m; sourceTree = "<group>"; };
+		799B865D169BAC5000FAAD6E /* HypoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HypoTests.h; sourceTree = "<group>"; };
+		799B865E169BAC5000FAAD6E /* HypoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypoTests.m; sourceTree = "<group>"; };
 		799B866A169BADC700FAAD6E /* Hypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Hypo.m; path = ../../Hypo.m; sourceTree = "<group>"; };
 		799B8670169BADE600FAAD6E /* Hypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hypo.h; path = ../../Hypo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,8 +78,8 @@
 		799B8625169BAC4F00FAAD6E = {
 			isa = PBXGroup;
 			children = (
-				799B863A169BAC5000FAAD6E /* HypoTest */,
-				799B8657169BAC5000FAAD6E /* HypoTestTests */,
+				799B863A169BAC5000FAAD6E /* HypoTestApp */,
+				799B8657169BAC5000FAAD6E /* HypoTests */,
 				799B8633169BAC5000FAAD6E /* Frameworks */,
 				799B8631169BAC5000FAAD6E /* Products */,
 			);
@@ -114,7 +114,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		799B863A169BAC5000FAAD6E /* HypoTest */ = {
+		799B863A169BAC5000FAAD6E /* HypoTestApp */ = {
 			isa = PBXGroup;
 			children = (
 				799B8646169BAC5000FAAD6E /* AppDelegate.h */,
@@ -122,6 +122,7 @@
 				799B8649169BAC5000FAAD6E /* MainMenu.xib */,
 				799B863B169BAC5000FAAD6E /* Supporting Files */,
 			);
+			name = HypoTestApp;
 			path = HypoTest;
 			sourceTree = "<group>";
 		};
@@ -137,15 +138,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		799B8657169BAC5000FAAD6E /* HypoTestTests */ = {
+		799B8657169BAC5000FAAD6E /* HypoTests */ = {
 			isa = PBXGroup;
 			children = (
-				799B865D169BAC5000FAAD6E /* HypoTestTests.h */,
-				799B865E169BAC5000FAAD6E /* HypoTestTests.m */,
+				799B865D169BAC5000FAAD6E /* HypoTests.h */,
+				799B865E169BAC5000FAAD6E /* HypoTests.m */,
 				799B8670169BADE600FAAD6E /* Hypo.h */,
 				799B866A169BADC700FAAD6E /* Hypo.m */,
 				799B8658169BAC5000FAAD6E /* Supporting Files */,
 			);
+			name = HypoTests;
 			path = HypoTestTests;
 			sourceTree = "<group>";
 		};
@@ -178,9 +180,9 @@
 			productReference = 799B8630169BAC5000FAAD6E /* HypoTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		799B8650169BAC5000FAAD6E /* HypoTestTests */ = {
+		799B8650169BAC5000FAAD6E /* HypoARCTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 799B8665169BAC5000FAAD6E /* Build configuration list for PBXNativeTarget "HypoTestTests" */;
+			buildConfigurationList = 799B8665169BAC5000FAAD6E /* Build configuration list for PBXNativeTarget "HypoARCTests" */;
 			buildPhases = (
 				799B864C169BAC5000FAAD6E /* Sources */,
 				799B864D169BAC5000FAAD6E /* Frameworks */,
@@ -192,7 +194,7 @@
 			dependencies = (
 				799B8656169BAC5000FAAD6E /* PBXTargetDependency */,
 			);
-			name = HypoTestTests;
+			name = HypoARCTests;
 			productName = HypoTestTests;
 			productReference = 799B8651169BAC5000FAAD6E /* HypoTestTests.octest */;
 			productType = "com.apple.product-type.bundle";
@@ -219,7 +221,7 @@
 			projectRoot = "";
 			targets = (
 				799B862F169BAC5000FAAD6E /* HypoTest */,
-				799B8650169BAC5000FAAD6E /* HypoTestTests */,
+				799B8650169BAC5000FAAD6E /* HypoARCTests */,
 			);
 		};
 /* End PBXProject section */
@@ -275,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				799B865F169BAC5000FAAD6E /* HypoTestTests.m in Sources */,
+				799B865F169BAC5000FAAD6E /* HypoTests.m in Sources */,
 				799B866B169BADC700FAAD6E /* Hypo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,7 +456,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		799B8665169BAC5000FAAD6E /* Build configuration list for PBXNativeTarget "HypoTestTests" */ = {
+		799B8665169BAC5000FAAD6E /* Build configuration list for PBXNativeTarget "HypoARCTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				799B8666169BAC5000FAAD6E /* Debug */,

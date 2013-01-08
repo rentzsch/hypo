@@ -1,4 +1,4 @@
-#import "HypoTestTests.h"
+#import "HypoTests.h"
 #import "Hypo.h"
 
 @interface ClassWithoutDependancies : NSObject
@@ -17,7 +17,7 @@
 @property(strong)  HypoClass  *NSString;
 @end
 
-@implementation HypoTestTests
+@implementation HypoTests
 
 - (void)testNonparticipatingClass {
     NSMutableData *a = [NSMutableData hypo_new];
