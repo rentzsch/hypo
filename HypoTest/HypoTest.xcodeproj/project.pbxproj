@@ -62,8 +62,8 @@
 		799B865B169BAC5000FAAD6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		799B865D169BAC5000FAAD6E /* HypoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HypoTests.h; sourceTree = "<group>"; };
 		799B865E169BAC5000FAAD6E /* HypoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypoTests.m; sourceTree = "<group>"; };
-		799B866A169BADC700FAAD6E /* Hypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Hypo.m; path = ../../Hypo.m; sourceTree = "<group>"; };
-		799B8670169BADE600FAAD6E /* Hypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hypo.h; path = ../../Hypo.h; sourceTree = "<group>"; };
+		799B866A169BADC700FAAD6E /* Hypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Hypo.m; path = ../../Hypo/Hypo.m; sourceTree = "<group>"; };
+		799B8670169BADE600FAAD6E /* Hypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hypo.h; path = ../../Hypo/Hypo.h; sourceTree = "<group>"; };
 		799B8681169BF41C00FAAD6E /* HypoARCTests copy.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HypoARCTests copy.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		799B8682169BF41C00FAAD6E /* HypoMRCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "HypoMRCTests-Info.plist"; path = "/Users/wolf/code/github/hypo/HypoTest/HypoMRCTests-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
