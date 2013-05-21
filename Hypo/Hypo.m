@@ -53,11 +53,11 @@ static NSString *classNameFromPropertyAttributes(const char *attributesCStr) {
                     NSAssert1(propertyClass, @"Hypo: couldn't find class named \"%@\"", propertyClassName);
                     
                     // First try assigning an existing instance.
-                    id propertyValue = opts[propertyName];
+                    id propertyValue = [opts objectForKey:propertyName];
                     
                     // If that failed second try the callback mechanism.
                     if (!propertyValue) {
-                        HypoCallbackBlock callback = opts[HypoCallback];
+                        HypoCallbackBlock callback = [opts objectForKey:HypoCallback];
                         if (callback) {
                             propertyValue = callback(instance,
                                                      propertyName,
@@ -73,9 +73,9 @@ static NSString *classNameFromPropertyAttributes(const char *attributesCStr) {
                         for (NSString *key in opts) {
                             if ([key hasPrefix:keypathPrefix]) {
                                 NSString *subkeypath = [key substringFromIndex:[keypathPrefix length]];
-                                subOpts[subkeypath] = opts[key];
+                                [subOpts setObject:[opts objectForKey:key] forKey:subkeypath];
                             } else {
-                                subOpts[key] = opts[key];
+                                [subOpts setObject:[opts objectForKey:key] forKey:key];
                             }
                         }
                         propertyValue = [propertyClass hypo_new:subOpts];
