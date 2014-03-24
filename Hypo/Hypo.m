@@ -66,7 +66,7 @@ static NSString *classNameFromPropertyAttributes(const char *attributesCStr) {
                     [self setValue:[propertyClass hypo_new] forKey:propertyName];
                 } else if ([propertyClassName isEqualToString:@"HypoClass"]) {
                     //  Unfulfilled class injection request.
-                    [self setValue:propertyClass forKey:propertyName];
+                    [self setValue:NSClassFromString(propertyName) forKey:propertyName];
                 }
             }
         }
