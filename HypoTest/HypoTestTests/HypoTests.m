@@ -42,30 +42,9 @@
 
 - (void)testClassWithExplicitDependancy {
     ClassWithoutDependancies *a = [ClassWithoutDependancies hypo_new];
-    ClassWithADependancy *b = [ClassWithADependancy hypo_new:@{
-                               @"leaf_hypo": a
-                               }];
-    STAssertNotNil(b.leaf_hypo, nil);
-    STAssertEqualObjects(a, b.leaf_hypo, nil);
-    STAssertNil(b.leaf_hypo.anObject, nil);
-}
-
-- (void)testClassWithCallbackDependancy {
-    ClassWithoutDependancies *a = [ClassWithoutDependancies hypo_new];
-    ClassWithADependancy *b = [ClassWithADependancy hypo_new:@{
-                               HypoCallback: [[^id (id instance,
-                                                  NSString *propertyName,
-                                                  NSString *propertyClassName,
-                                                  NSDictionary *opts){
-        id result = nil;
-        if ([instance isKindOfClass:[ClassWithADependancy class]]
-            && [propertyName isEqualToString:@"leaf_hypo"])
-        {
-            result = a;
-        }
-        return result;
-    } copy] autorelease]
-                               }];
+    ClassWithADependancy *b = [ClassWithADependancy hypo_new:^(ClassWithADependancy *instance) {
+        instance.leaf_hypo = a;
+    }];
     STAssertNotNil(b.leaf_hypo, nil);
     STAssertEqualObjects(a, b.leaf_hypo, nil);
     STAssertNil(b.leaf_hypo.anObject, nil);
@@ -80,9 +59,11 @@
 
 - (void)testClassesWithExplicitDependancy {
     ClassWithoutDependancies *a = [ClassWithoutDependancies hypo_new];
-    ClassWithADependancyOnAClassWithADependancy *b = [ClassWithADependancyOnAClassWithADependancy hypo_new:@{
-                                                      @"branch_hypo.leaf_hypo": a
-                                                      }];
+    ClassWithADependancyOnAClassWithADependancy *b = [ClassWithADependancyOnAClassWithADependancy hypo_new:^(ClassWithADependancyOnAClassWithADependancy *instance) {
+        instance.branch_hypo = [ClassWithADependancy hypo_new:^(ClassWithADependancy *instance) {
+            instance.leaf_hypo = a;
+        }];
+    }];
     STAssertNotNil(b.branch_hypo, nil);
     STAssertNotNil(b.branch_hypo.leaf_hypo, nil);
     STAssertEqualObjects(a, b.branch_hypo.leaf_hypo, nil);
