@@ -35,7 +35,7 @@ static NSString *classNameFromPropertyAttributes(const char *attributesCStr) {
     id instance = [[self alloc] init];
     
     if (block) {
-        block(self);
+        block(instance);
     }
     
     [instance hypo_setup];
