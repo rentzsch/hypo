@@ -79,8 +79,8 @@ Here's the updated implementation code:
                                                                inDomains:NSUserDomainMask];
         
         NSURL *baseURL = ([urls count] > 0)
-        ? [urls objectAtIndex:0]
-        : [NSURL fileURLWithPath:NSTemporaryDirectory() isDirectory:YES];
+            ? [urls objectAtIndex:0]
+            : [NSURL fileURLWithPath:NSTemporaryDirectory() isDirectory:YES];
         
         NSString *appName = [[self.mainBundle_hypo infoDictionary] objectForKey:(id)kCFBundleNameKey];
         return [baseURL URLByAppendingPathComponent:appName isDirectory:YES];
