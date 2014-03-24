@@ -57,7 +57,7 @@ As it stands now `AppSupportFolder` relies upon `NSFileManager` and `NSBundle` t
 
 Objective-C doesn't have anything like Java or C#'s annotations, so we use the `_hypo` suffix naming convention hack to "annotate" properties requiring instantiation.
 
-Here's what updated implementation code:
+Here's the updated implementation code:
 
     //
     // AppSupportFolder.m
